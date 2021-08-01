@@ -24,7 +24,6 @@
     </style>
   </head>
   <body>
-    <a href="https://github.com/devanlai/webdfu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
     <p>
       <span id="status"></span>
     </p>
@@ -49,12 +48,12 @@
       <div id="dfuInfo" style="white-space: pre"></div>
     </p>
     <fieldset>
-      <legend>Runtime mode</legend>
+      <legend>Modo de Runtime</legend>
       <button id="detach" disabled="true">Detach DFU</button>
     </fieldset>
     <fieldset>
       <form id="configForm">
-        <label for="transferSize">Transfer Size:</label>
+        <label for="transferSize">Tamanho de transferência:</label>
         <input type="number" name="transferSize" id="transferSize" value="1024"/>
         <div id="dfuseFields" hidden="true">
           <label for="dfuseStartAddress">DfuSe Start Address:</label>
@@ -63,9 +62,9 @@
           <input type="number" name="dfuseUploadSize" id="dfuseUploadSize" min="1"/>
         </div>
       
-        <legend>DFU mode</legend>
+        <legend>Modo DFU</legend>
         <fieldset>
-          <legend>Firmware Download (write to USB device)</legend>
+          <legend>Gravação</legend>
           <p>
             <input type="file" id="firmwareFile" name="file" disabled="true"/>
           </p>
@@ -75,7 +74,7 @@
           <div class="log" id="downloadLog"></div>
         </fieldset>
         <fieldset>
-          <legend>Firmware Upload (read from USB device)</legend>
+          <legend>Leitura</legend>
           <p>
             <button id="upload" disabled="true">Upload</button>
           </p>
@@ -83,21 +82,29 @@
         </fieldset>
       </form>
     </fieldset>
-    <h1>About</h1>
-    <p>
-      This is a proof-of-concept demo of host <a href="http://wiki.openmoko.org/wiki/USB_DFU">USB DFU</a> drivers in Javascript utilizing the <a href="https://wicg.github.io/webusb/">WebUSB</a> draft standard to implement USB firmware updates from the browser.
-    </p>
-    <h1>Prerequisites</h1>
-    <p>In order to run this demo, you will need:</p>
+    <h2>Pré-requisitos</h2>
+    <p>Para gravar corretamente a Franzininho WIFi usando o WebDFU você precisará:</p>
     <ul>
       <li>
-        <p>An up-to-date version of Chrome, at least version 61 or newer</p>
-      </li>
+        <p>Versão atualizada do navegador Chrome,  v. 92.0.4515.107 or ou mais nova</p>
       <li>
-        <p>A USB DFU class device</p>
-        <p>For a WebUSB friendly USB DFU bootloader that can be flashed onto <a href="http://wiki.stm32duino.com/index.php?title=Blue_Pill">inexpensive STM32F103 boards</a>, check out the <a href="https://github.com/devanlai/dapboot">dapboot</a> project.</p>
-        <p>Some recent STM32 parts have on-chip USB DfuSe bootloaders that are supported by this site.</p>
+        <p>Placa Franzininho WiFi com módulo ESP32-S2 Wrover ou Wroom</p>
+        <p>Para mais detalhes sobre o funcionamento do ESP32-S2 em modo DFU acesse: <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-guides/dfu.html" target="_blank">Device Firmware Upgrade through USB</a>.</p>
+      <li>
+        <p>Instalar drivers ou configurar a USB(conforme seu sistema operacional). Mais detalhes em: <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-guides/dfu.html#flashing-the-chip-with-the-dfu-image" target="_blank">Flashing the Chip with the DFU Image</a></p>
       </li>
     <ul>
+
+      <h2>Sobre a aplicação</h2>
+      <p>
+        Essa aplicação foi baseada no projeto <a href= "https://github.com/devanlai/webdfu" target="_blank">WebUSB Device Firmware Upgrade example</a> de Devan Lai.
+      </p>  
+
+      <h2>Sobre o projeto Franzininho</h2>
+      <p>
+        Site: <a href = "https://franzininho.com.br/" target="_blank">www.franzininho.com.br</a>
+        Comunidade: <a href = "https://discord.gg/H5kENmWGaz" target="_blank">Discord</a>
+        Documentação:<a href = "https://franzininho.github.io/docs-franzininho-site/" target="_blank">Documentação Franzininho</a>
+      </p>  
   </body>
 </html>
